@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--- namespace=""里面填UserDao的Reference,直接copy就行-->
+<mapper namespace="com.dgxs.zsgcdemo.user.dao.UserDao">
+
+    <select id="getAll" resultType="com.dgxs.zsgcdemo.user.entity.UserEntity" parameterType="java.util.Map">
+        select * from user
+    </select>
+
+    <delete id="delById" parameterType="java.lang.Integer">
+
+        delete from user where id = ${id}
+
+    </delete>
+
+    <insert id="save" parameterType="com.dgxs.zsgcdemo.user.entity.UserEntity">
+
+        INSERT INTO `zsgcdemo`.`user` (
+            `id`,
+            `username`,
+            `password`,
+            `createtime`,
+            `status`
+        )
+        VALUES
+            (
+                NULL ,
+                #{username},
+                #{password},
+                #{createtime},
+                #{status}
+            );
+
+
+
+    </insert>
+
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultType="com.dgxs.zsgcdemo.user.entity.UserEntity">
+
+        select * from user where id = ${id}
+
+    </select>
+
+    <!-- 根据id修改用户数据-->
+    <update id="updateUserById" parameterType="com.dgxs.zsgcdemo.user.entity.UserEntity">
+
+        UPDATE `zsgcdemo`.`user`
+         SET
+                `username` = #{username},
+                `password` = #{password}
+            WHERE
+                (`id` = ${id});
+
+
+    </update>
+</mapper>
