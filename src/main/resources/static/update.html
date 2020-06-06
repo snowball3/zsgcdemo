@@ -13,17 +13,14 @@
     <form>
         <input type="hidden" id="id">
         <div class="form-group">
-            <label for="exampleInputEmail1">用户名</label>
+            <label for="exampleInputEmail1">中文</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">新密码</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">英文</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword2">重复密码</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-        </div>
+
         <input id="sub" class="btn btn-success form-control" type="button" value="修改">
     </form>
 </div>
@@ -41,7 +38,7 @@
                    $("#id").val(data.id);
                    $("#exampleInputEmail1").val(data.username);
                    $("#exampleInputPassword1").val(data.password);
-                   $("#exampleInputPassword2").val(data.password);
+
 
                 }
             })
@@ -61,7 +58,7 @@
             var id = $("#id").val() ;
             var userName = $("#exampleInputEmail1").val();
             var passWord = $("#exampleInputPassword1").val();
-            var rePassWord = $("#exampleInputPassword2").val();
+
 
         // 用户名是不是为空
         if(userName.length == 0) {
@@ -75,11 +72,6 @@
             return; // 不让程序继续往下执行了
         }
 
-        // 判断密码和重复密码是否一致
-        if(passWord != rePassWord) {
-            alert("两次密码输入不一致")
-            return; // 不让程序继续往下执行了
-        }
 
         // 封装数据，并提交给后端接口
         var user = {

@@ -27,8 +27,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void save(UserEntity userEntity) {
-        userEntity.setCreatetime(new Date());
-        userEntity.setStatus(1);
+
         userDao.save(userEntity);
 
     }

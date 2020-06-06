@@ -20,17 +20,14 @@
         INSERT INTO `zsgcdemo`.`user` (
             `id`,
             `username`,
-            `password`,
-            `createtime`,
-            `status`
+            `password`
         )
         VALUES
             (
                 NULL ,
                 #{username},
-                #{password},
-                #{createtime},
-                #{status}
+                #{password}
+
             );
 
 
@@ -44,7 +41,7 @@
 
     </select>
 
-    <!-- 根据id修改用户数据-->
+    <!-- 根据id修改数据-->
     <update id="updateUserById" parameterType="com.dgxs.zsgcdemo.user.entity.UserEntity">
 
         UPDATE `zsgcdemo`.`user`

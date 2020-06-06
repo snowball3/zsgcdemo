@@ -7,18 +7,16 @@ public class UserEntity {
     private Integer id;
     private String username;
     private String password;
-    private Date createtime;
-    private Integer status;
+
     public UserEntity(){
 
     }
 
-    public UserEntity(Integer id, String username, String password, Date createtime, Integer status) {
+    public UserEntity(Integer id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.createtime = createtime;
-        this.status = status;
+
     }
 
     public Integer getId() {
@@ -45,21 +43,6 @@ public class UserEntity {
         this.password = password;
     }
 
-    public Date getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
 
     @Override
     public String toString() {
@@ -67,8 +50,6 @@ public class UserEntity {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", createtime=" + createtime +
-                ", status=" + status +
                 '}';
     }
 }

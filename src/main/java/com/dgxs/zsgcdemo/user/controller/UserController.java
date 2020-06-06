@@ -46,7 +46,7 @@ public class UserController {
     @ResponseBody
     public String save(@RequestBody UserEntity userEntity) {
 
-        System.out.println("用户注册 - " + userEntity.toString());
+        System.out.println("数据添加 - " + userEntity.toString());
 
         userService.save(userEntity);
         return "success";
@@ -60,7 +60,7 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    //根据id修改用户信息
+    //根据id修改信息
     @RequestMapping("/updateUserById")
     @ResponseBody
     public String updateUserById(@RequestBody UserEntity userEntity){
